@@ -1,0 +1,7 @@
+*.class
+*.jar
+*.project
+*.war
+*.classpath
+commit.sh
+target/
