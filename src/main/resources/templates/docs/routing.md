@@ -20,11 +20,11 @@ just how that data is passed in the URL provided it can meet the rules. In this 
 in the URL or as a traditional parameter. For `POST` requests it could also be passed in the submitted 
 form data.  
 
-More advanced patterns are described below
+More advanced patterns are described below.
 
 ### Single Wildcards 
 
-```*``` (_asterisk_) will match anything once 
+```*``` (_asterisk_) will match anything once. 
 
 	GET:/say/*/to/*
 
