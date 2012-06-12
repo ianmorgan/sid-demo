@@ -8,7 +8,6 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 
 import com.lateblindcat.sid.core.fp.ExpressionFactory;
-import com.lateblindcat.sid.core.framework.Params;
 import com.lateblindcat.sid.core.framework.Route;
 import com.lateblindcat.sid.framework.pages.PageResponse;
 import com.lateblindcat.sid.framework.pages.PageResponseFactory;
@@ -28,11 +27,10 @@ public class TwitterSearchSnapin implements Snapin {
 
 	@Override
 	public PageResponse process(RackRequest request) {
-		Params params = new Params(request);
 		Twitter twitter = new TwitterFactory().getInstance();
 		String q = "dartford";
-		if (params.named("q") != null) {
-			q = params.named("q").value;
+		if (request.params().containsKey("q") ) {
+			q = request.params().get("q");
 		}
 		Query query = new Query(q);
 		query.setPage(1);
